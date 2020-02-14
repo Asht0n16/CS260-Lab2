@@ -1,0 +1,31 @@
+.day {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeP {
+  text-align: center;
+}
+
+#mainDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+#currWeather {
+  width: 38%;
+}
+
+#forecast {
+  width: 60%;
+}
+
+#mainWeather {
+
+  margin-left: 20%;
+}
+
+#mainIcon {
+  width: 80px;
+  height: 80px;
+}
