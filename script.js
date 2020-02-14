@@ -10,6 +10,7 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
   .then(function(response) {
     return response.json();
   }).then(function(json) {
+
     //Output results
     console.log(json);
     let results = "";
@@ -33,6 +34,12 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
     results += '<h3>Humidity: ' + json.main.humidity + "%</h3>"
     results += '<h3>Wind Speed: ' + json.wind.speed + " mph</h3>"
 
+    document.getElementById("weatherResults").innerHTML = results;
+    document.getElementById('currWeather').style.border= "2px solid black";
+  })
+  .catch(error => {
+    let results = "<h2>Error</h2>";
+    results += "<p id='errorMessage'>City could not be found. Please check your spelling and try again</p>";
     document.getElementById("weatherResults").innerHTML = results;
   });
 
@@ -60,5 +67,10 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
           forecast += "</div>";
         }
         document.getElementById("forecastResults").innerHTML = forecast;
+        document.getElementById('forecast').style.border= "2px solid black";
+  })
+  .catch(error => {
+    document.getElementById("forecastResults").innerHTML = "";
+    document.getElementById('forecast').style.border= "0px";
   });
 });
