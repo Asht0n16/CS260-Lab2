@@ -1,7 +1,47 @@
+/*text color: #27373c*/
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: #E3F7FF;
+  font-family: 'Lato', sans-serif;
+}
+
+.header {
+  background-color: #96E2FF;
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
+  border-radius: 0;
+}
+
+div {
+  border-radius: 6px;
+}
+
+#title {
+  color: #27373c;
+  font-family: 'Sriracha', cursive;
+}
+
+h1 {
+  margin-top: 0;
+  margin-left: 10px;
+  color: #27373c;
+}
+
 form {
   float: left;
   width: 30%;
   text-align: center;
+  margin: 10px;
+}
+
+label {
+  color: #27373c;
 }
 
 #weatherSubmit {
@@ -19,15 +59,21 @@ form {
   text-align: center;
 }
 
+#wrapper {
+  clear: left;
+  min-height: 100%;
+}
+
 #mainDiv {
   clear: left;
   display: flex;
   justify-content: space-around;
+  padding-bottom: 50px;
 }
 
 #currWeather {
   width: 32%;
-  height: 500px;
+  height: 520px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -38,7 +84,8 @@ form {
 }
 
 #mainWeather {
-  border: 1px solid black;
+  background-color: #96E2FF;
+  border: 2px outset #4B7180;
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
@@ -47,6 +94,39 @@ form {
 #mainIcon {
   width: 80px;
   height: 80px;
+}
+
+p {
+  margin: 4px;
+  color: #27373c;
+  font-family: 'Lato', sans-serif;
+}
+
+h4 {
+  margin: 0;
+  color: #27373c;
+}
+
+h5 {
+  margin: 0;
+  color: #27373c;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  margin-top: -40px;
+  background-color: #96E2FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -74,5 +154,9 @@ form {
 
   #forecast {
     width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
   }
 }

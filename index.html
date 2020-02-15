@@ -5,15 +5,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Lab 2</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Sriracha&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-
-  <h1>Hammond Cheese Weather</h1>
-
-  <p>Learn about the weather anywhere in the world, whether it is sunny and warm
-  or cloudy with a chance of ham and cheese!</p>
+  <div class="header">
+    <h1 id="title">Hammond Cheese Weather</h1>
+  </div>
 
   <form>
     <label>Enter a city name here: </label>
@@ -21,6 +20,7 @@
     <input id="weatherSubmit" type="submit" value="Submit"></input>
   </form>
 
+  <div id="wrapper">
   <div id="mainDiv">
     <div id="currWeather">
       <div id="weatherResults">
@@ -31,6 +31,11 @@
       <div id="forecastResults">
       </div>
     </div>
+  </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://github.com/BYU-CS-260-Winter-2020/lab-2-weather-app-Asht0n16">GitHub Repository</a>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>

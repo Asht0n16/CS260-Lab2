@@ -14,7 +14,7 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
     //Output results
     console.log(json);
     let results = "";
-    results += '<h2 id="weatherHeader">Weather in ' + json.name + "</h2>";
+    results += '<h1 id="weatherHeader">Current Weather in ' + json.name + "</h1>";
     results += "<div id='mainWeather'>";
       for (let i=0; i < json.weather.length; i++) {
         results += '<img id="mainIcon" src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
@@ -29,13 +29,14 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
       results += '<h2 id="temp">' + json.main.temp + " &deg;F</h2>"
     results += "</div>";
     results += '<h3>Feels Like: ' + json.main.feels_like + " &deg;F</h3>"
-    results += '<h3>Low: ' + json.main.temp_min + " &deg;F</h3>"
     results += '<h3>High: ' + json.main.temp_max + " &deg;F</h3>"
+    results += '<h3>Low: ' + json.main.temp_min + " &deg;F</h3>"
     results += '<h3>Humidity: ' + json.main.humidity + "%</h3>"
     results += '<h3>Wind Speed: ' + json.wind.speed + " mph</h3>"
 
     document.getElementById("weatherResults").innerHTML = results;
-    document.getElementById('currWeather').style.border= "2px solid black";
+    document.getElementById('currWeather').style.border= "2px solid #4B7180";
+    //document.getElementById('currWeather').style.height= "550px";
   })
   .catch(error => {
     let results = "<h2>Error</h2>";
@@ -60,14 +61,16 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
             forecast += "<div class='timeP'>";
             forecast += "<h3>" + moment(json.list[(i * 8) + j].dt_txt).format('h:mm a') + "</h3>";
             forecast += '<img class="foreIcon" src="http://openweathermap.org/img/w/' + json.list[(i * 8) + j].weather[0].icon + '.png"/>'
-            forecast += "<p>" + json.list[(i * 8) + j].weather[0].main + "</p>"
-            forecast += "<p>Temperature: " + json.list[(i * 8) + j].main.temp + "</p>";
+            forecast += "<h5>" + json.list[(i * 8) + j].weather[0].main + "</h5>";
+            forecast += "<h4>" + json.list[(i * 8) + j].main.temp + " &deg;F</h4>";
+            forecast += "<p>High: " + json.list[(i*8)+j].main.temp_max + "</p>";
+            forecast += "<p>Low: " + json.list[(i*8)+j].main.temp_min + "</p>";
             forecast += "</div>";
           }
           forecast += "</div>";
         }
         document.getElementById("forecastResults").innerHTML = forecast;
-        document.getElementById('forecast').style.border= "2px solid black";
+        document.getElementById('forecast').style.border= "2px solid #4B7180";
   })
   .catch(error => {
     document.getElementById("forecastResults").innerHTML = "";
